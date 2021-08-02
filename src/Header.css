@@ -1,0 +1,81 @@
+.header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background-color: darkgray;
+    position: sticky;   {/*스크롤을 내려도 고정*/}
+    top: 0;
+    z-index: 100;    {/* 숫자가 클수록 위로 겹쳐짐 (-1~1000*/}
+}
+
+.header_logo
+{   
+    width: 90px;
+    object-fit: contain;
+}
+
+.header_name{
+    
+    margin-left: 5%;
+    width: 400px;
+    color: white;
+}
+
+.header_search {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    border-radius: 24px;
+
+}
+.header_searchInput{
+    height: 50px;
+    padding: 10px;
+    border: none;
+    width: 50%;
+    margin-left: 50%;
+    border: 3px;
+    border-color: black;    
+    border-radius: 5px;
+    
+}
+
+.header_searchIcon{
+    padding: 5px;
+    height: 22px;
+    background-color: white;
+    color: black;
+    margin-right: 50%;
+    
+}
+.header_option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.header_navigation{
+    display:flex;
+    justify-content:space-evenly; {/*비슷하게 배치*/}
+}
+
+.header_login{
+    margin:0 auto;
+}
+
+.header_account{
+    margin:0 auto;
+}
+
+.header_mypageIcon{
+    margin:0 auto;
+}
+
+.header_optionLine{
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 3px;
+    margin:0 auto;
+}
