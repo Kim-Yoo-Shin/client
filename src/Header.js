@@ -4,13 +4,14 @@ import SearchIcon from '@material-ui/icons/Search'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
         <div className="header">
             
             <img className = "header_logo" src = "https://yt3.ggpht.com/ytc/AKedOLQf9XARnp2yzFCo9D8hFKckDRRtCXDJTcYLY2wwRw=s900-c-k-c0x00ffffff-no-rj"/>
-            <h1 className = "header_name"> 한솔아 죽어줘</h1>
+            <h1 className = "header_name"> MAN</h1>
             
             <div className ="header_search">
                 <input className ="header_searchInput" type="text"/>
@@ -20,7 +21,10 @@ function Header() {
             <div className="header_navigation">
                 <div className="header_option">
                     <VpnKeyIcon className="header_login"/>
+                    <Link to ="/Login" className="homelogin">
                     <span className = "header_optionLine"> 로그인 </span>
+                    </Link>
+                    
                 </div>
 
                 <div className="header_option">

@@ -16,8 +16,6 @@ import Container from '@material-ui/core/Container';
 function Name() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      
-      
       {'김유신'}
     </Typography>
   );
