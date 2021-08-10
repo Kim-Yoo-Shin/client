@@ -29,7 +29,9 @@ function Header() {
 
                 <div className="header_option">
                     <EmojiPeopleIcon className="header_account"/>
+                    <Link to ="/Signup" className="homesign">
                     <span className = "header_optionLine"> 회원가입 </span>
+                    </Link>
                 </div>
                 
                 <div className="header_option">
