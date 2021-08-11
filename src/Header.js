@@ -9,10 +9,13 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <div className="header">
-            
-            <img className = "header_logo" src = "https://yt3.ggpht.com/ytc/AKedOLQf9XARnp2yzFCo9D8hFKckDRRtCXDJTcYLY2wwRw=s900-c-k-c0x00ffffff-no-rj"/>
+            <Link to ="/" className="homeurl">
+            <img className = "header_logo" src = "https://yt3.ggpht.com/ytc/AKedOLQf9XARnp2yzFCo9D8hFKckDRRtCXDJTcYLY2wwRw=s900-c-k-c0x00ffffff-no-rj"
+             alt = "headerlogo"/ >
+            </Link>
             <h1 className = "header_name"> MAN</h1>
             
+
             <div className ="header_search">
                 <input className ="header_searchInput" type="text"/>
                 <SearchIcon className="header_serachIcon"/>

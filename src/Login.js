@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
 function Name() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%', 
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -52,7 +53,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h6">
-          Sign in
+          로그인
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -81,6 +82,7 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="아이디 저장"
           />
+
           <Button
             type="submit"
             fullWidth
@@ -88,20 +90,17 @@ export default function SignIn() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            로그인
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                비밀번호를 까먹었나요?
-              </Link>
-            </Grid>
+
+          
+            
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/Signup" variant="body2">
                 {"계정이 없나요? 회원가입"}
               </Link>
             </Grid>
-          </Grid>
+          
         </form>
       </div>
       <Box mt={8}>
