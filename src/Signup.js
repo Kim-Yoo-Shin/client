@@ -10,17 +10,12 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -31,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function SignUp() {
   const classes = useStyles();
 
@@ -39,11 +33,11 @@ export default function SignUp() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        <Avatar style={{ color: 'black' }}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          회원 가입
+          회원가입
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -71,7 +65,6 @@ export default function SignUp() {
                 autoComplete="email"
               />
             </Grid>
-
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -98,25 +91,27 @@ export default function SignUp() {
               />
             </Grid>
             
+            
           </Grid>
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            style={{ color: 'black' }}
             className={classes.submit}
           >
             회원가입
           </Button>
-          <Grid container justifyContent="flex-end">
+          
             <Grid item>
               <Link href="/Login" variant="body2">
-                계정이 있나요? 로그인
+                회원이시라면 로그인!
               </Link>
             </Grid>
-          </Grid>
+         
         </form>
       </div>
+      
     </Container>
   );
 }

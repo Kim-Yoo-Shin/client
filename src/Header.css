@@ -2,7 +2,7 @@
     height: 90px;
     display: flex;
     align-items: center;
-    background-color: darkgray;
+    background-color: rgb(56, 54, 54);
     position: sticky;   {/*스크롤을 내려도 고정*/}
     top: 0;
     z-index: 100;    {/* 숫자가 클수록 위로 겹쳐짐 (-1~1000*/}
@@ -15,7 +15,6 @@
 }
 
 .header_name{
-    
     margin-left: 5%;
     width: 400px;
     color: white;
@@ -81,6 +80,11 @@
 }
 
 .homelogin{
+    text-decoration: none;
+    color: white;
+}
+
+.homesign{
     text-decoration: none;
     color: white;
 }
