@@ -25,9 +25,6 @@ function Header() {
                     <VpnKeyIcon className="header_login"/>
 <<<<<<< HEAD
                     <Link to ="/member" className="homelogin">
-=======
-                    <Link to ="/Login" className="homelogin">
->>>>>>> parent of df9f69c... Modify Link
                     <span className = "header_optionLine"> 로그인 </span>
                     </Link>
                     
