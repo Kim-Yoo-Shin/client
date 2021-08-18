@@ -41,28 +41,17 @@ export default function Signup() {
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="이름"
-                autoFocus
-              />
-            </Grid>
+  
             
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
-                label="이메일"
-                name="email"
-                autoComplete="email"
+                id="id"
+                label="아이디"
+                name="id"
+                autoComplete="id"
               />
             </Grid>
             <Grid item xs={12}>
