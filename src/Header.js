@@ -23,7 +23,7 @@ function Header() {
             <div className="header_navigation">
                 <div className="header_option">
                     <VpnKeyIcon className="header_login"/>
-                    <Link to ="/Login" className="homelogin">
+                    <Link to ="/member" className="homelogin">
                     <span className = "header_optionLine"> 로그인 </span>
                     </Link>
                     
