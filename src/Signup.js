@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function Signup() {
   const classes = useStyles();
 
   return (
@@ -104,11 +104,10 @@ export default function SignUp() {
           </Button>
           
             <Grid item>
-              <Link href="/Login" variant="body2">
+              <Link href="/login" variant="body2">
                 회원이시라면 로그인!
               </Link>
             </Grid>
-         
         </form>
       </div>
       

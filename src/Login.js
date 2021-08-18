@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%', 
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -43,7 +43,7 @@ export default function SignIn() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar style={{ color: 'black' }}>
-          <VpnKeyIcon />
+          <VpnKeyIcon/>
         </Avatar>
         <Typography component="h1" variant="h6">
           로그인
@@ -54,10 +54,10 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
-            id="email"
+            id="id"
             label="아이디"
-            name="email"
-            autoComplete="email"
+            name="id"
+            autoComplete="id"
             autoFocus
           />
           <TextField
@@ -84,7 +84,7 @@ export default function SignIn() {
           
             
             <Grid item>
-              <Link href="/Signup" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"계정이 없나요? 회원가입"}
               </Link>
             </Grid>

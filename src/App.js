@@ -14,21 +14,18 @@ function App() {
   return (
     <Router>
       <div className="App">
-
           <Switch>
-            <Route path="/Login">
+            <Route path="/login">
               <Login/>
             </Route>
 
             <Route exact path ="/">
-              
                 <Header/>
                 <Navbar/> 
                 <Board/>
-              
             </Route>
 
-            <Route path ="/Signup">
+            <Route path ="/member">
               <Signup/>
             </Route>
           </Switch>
