@@ -5,19 +5,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
-function teamName() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'김유신'}
-    </Typography>
-  );
-}
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+function Signin() {
   const classes = useStyles();
 
   return (
@@ -59,16 +52,17 @@ export default function SignIn() {
             name="id"
             autoComplete="id"
             autoFocus
+            
           />
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            name="password"
-            label="비밀번호"
-            type="password"
             id="password"
+            label="비밀번호"
+            name="password"
+            type="password"      
             autoComplete="current-password"
           />
           
@@ -90,11 +84,8 @@ export default function SignIn() {
             </Grid>
         </form>
       </div>
-
-      <Box mt={8}>
-        <teamName/>
-      </Box>
-
     </Container>
   );
 }
+
+export default Signin;

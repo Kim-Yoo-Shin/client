@@ -13,7 +13,7 @@ function Header() {
             <img className = "header_logo" src = "https://yt3.ggpht.com/ytc/AKedOLQf9XARnp2yzFCo9D8hFKckDRRtCXDJTcYLY2wwRw=s900-c-k-c0x00ffffff-no-rj"
             alt = "headerimage"/>
             </Link>
-            <h1 className = "header_name">MAN</h1>
+            <h1 className = "header_name">M A N</h1>
             
             <div className ="header_search">
                 <input className ="header_searchInput" type="text"/>
@@ -23,7 +23,7 @@ function Header() {
             <div className="header_navigation">
                 <div className="header_option">
                     <VpnKeyIcon className="header_login"/>
-                    <Link to ="/login" className="homelogin">
+                    <Link to ="/signin" className="homelogin">
                     <span className = "header_optionLine"> 로그인 </span>
                     </Link>
                     
