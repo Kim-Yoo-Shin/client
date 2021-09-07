@@ -35,7 +35,7 @@ function Signup(props) {
   const [data, setData] = useState({
       userName : "",
       email: "",
-      id: "",
+      userId: "",
       password:"",
       checkPassword: "",
     });
@@ -52,7 +52,7 @@ function Signup(props) {
       axios.post(url,{
         userName : data.userName,
         email: data.email,
-        id: data.id,
+        userId: data.userId,
         password: data.password,
         checkPassword: data.checkPassword,
       })
@@ -103,8 +103,8 @@ function Signup(props) {
                 required
                 fullWidth
                 label="아이디"
-                value={data.id} onChange={e => handle(e)}
-                name="id"
+                value={data.userId} onChange={e => handle(e)}
+                name="userId"
                 autoComplete="id"
               />
             </Grid>
