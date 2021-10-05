@@ -1,14 +1,17 @@
 import './App.css';
 import React from 'react';
-import Header from './Header'
+import Header from './components/Header.js'
 import Signin from './Signin.js'
-import Navbar from './Navbar.js'
+import Navbar from './components/Navbar.js'
 import Signup from './Signup.js'
 import Board from './Board.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import axios from "axios";
 
 
+axios.defaults.baseURL = "https://www.kys.com";
+axios.defaults.withCredentials = true;
 
 
 function App() {
@@ -18,6 +21,7 @@ function App() {
           <Switch>
             <Route path="/signin">
               <Header/>
+              <Navbar/>
               <Signin/>
             </Route>
 
@@ -29,11 +33,13 @@ function App() {
 
             <Route path ="/member">
               <Header/>
+              <Navbar/>
               <Signup/>
             </Route>
 
             <Route path ="/mypage">
               <Header/>
+              <Navbar/>
             </Route>
           </Switch>
       </div>
