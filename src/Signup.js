@@ -9,7 +9,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import validation from './utils/validation';
+import validation from './utils/SignupValidation';
 
 
 
@@ -51,7 +51,6 @@ function Signup() {
       function submit(e){
         e.preventDefault();
         setErrors(validation(data))
-        
       }
 
 

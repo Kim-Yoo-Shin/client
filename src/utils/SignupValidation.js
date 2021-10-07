@@ -1,20 +1,19 @@
 import swal from 'sweetalert2';
 import axios from 'axios';
 
-
 const url = "http://localhost:8080/api/auth/signup"
 const validation = (data) => {
 
     let errors={
-        
     };
+
     if (!data.userName){
         errors.userName= "이름을 입력해주세요!"   
     }
     else if (!data.userId){
         errors.userId = "아이디를 입력해주세요!"
     }
-    else if(data.userId.length <5){
+    else if(data.userId.length <6){
         errors.userId = "아이디의 길이가 5글자 보다 길어야합니다!"
     }
     else if (!data.email){
@@ -26,7 +25,7 @@ const validation = (data) => {
     else if (!data.password){
         errors.password = "비밀번호를 입력해주세요!"  
     }
-    else if(data.password.length <5){
+    else if(data.password.length <6){
         errors.password = "비밀번호 길이가 5글자 보다 길어야합니다!"   
     }
     else if (!data.checkPassword){
@@ -57,14 +56,15 @@ const validation = (data) => {
                 );
                 })
             .catch(error => {
+                console.log(error.response)
                 swal.fire({
                     icon: 'warning',
                     title: '아이디 중복 오류',
-                    text: '아이디가 중복 되었습니다. 다시 입력해주세요', 
-                    cancelButtonText: '돌아가기',
+                    text: '아이디가 중복 되었습니다. 다시 입력해주세요!', 
+                    confirmButtonText: '<a>돌아가기</a>',
                 }
                 );
-                console.log(error.response)
+                
             })
 
                 
