@@ -10,8 +10,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import axios from "axios";
 
 
-axios.defaults.baseURL = "https://www.kys.com";
-axios.defaults.withCredentials = true;
 
 
 function App() {
