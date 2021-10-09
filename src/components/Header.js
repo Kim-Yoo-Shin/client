@@ -1,16 +1,54 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './Header.css'
 import SearchIcon from '@material-ui/icons/Search'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert2';
 
 
 
-const isUser = false;
+function Logout(e){ 
+    localStorage.clear();
+    swal.fire({
+        icon: 'success',
+        title: '로그아웃',
+        text: '로그아웃 완료!', 
+        confirmButtonText:'<a>확인</a>',
+    }
+    );
+}
 
-function Header() {
+export default class Header extends Component {
+
+    render(){
+        var isUser = localStorage.getItem('accessToken')
+        let buttons;
+
+        if (!isUser){
+            buttons = (
+                <div className="header_option">
+                    <VpnKeyIcon className="header_login"/>
+                    <Link to ="/signin" className="homelogin">
+                    <span className = "header_optionLine"> 로그인 </span>
+                    </Link>
+                </div>
+            )
+        }
+
+        else{
+            buttons = (
+                <div className="header_option">
+                <VpnKeyIcon className="header_login"/>
+                <Link to ="/signin"  className="homelogin">
+                <span onClick={e => Logout(e)} className = "header_optionLine"> 로그아웃 </span>
+                </Link>
+                
+            </div>
+            )
+        }
+
     return (
         <div className="header">
             <Link to ="/" className="homeurl">
@@ -25,17 +63,12 @@ function Header() {
             </div>
 
             <div className="header_navigation">
-                <div className="header_option">
-                    <VpnKeyIcon className="header_login"/>
-                    <Link to ="/signin" className="homelogin">
-                    <span className = "header_optionLine"> {isUser ? '로그아웃' : '로그인'} </span>
-                    </Link>
-                    
-                </div>
+            
+                <span className = "header_optionLine"> {buttons} </span>
 
                 <div className="header_option">
                     <EmojiPeopleIcon className="header_account"/>
-                    <Link to ="/member" className="homesign">
+                    <Link to ="/signup" className="homesign">
                     <span className = "header_optionLine"> 회원가입 </span>
                     </Link>
                 </div>
@@ -45,12 +78,12 @@ function Header() {
                     <Link to ="/mypage" className="homemypage">
                     <span className = "header_optionLine"> 마이페이지 </span>
                     </Link>
-
                 </div>
-            </div>
 
+            </div>
         </div>
+        
     );
 }
+}
 
-export default Header;

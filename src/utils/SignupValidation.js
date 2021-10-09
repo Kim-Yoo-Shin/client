@@ -1,7 +1,7 @@
 import swal from 'sweetalert2';
 import axios from 'axios';
 
-const url = "http://localhost:8080/api/auth/signup"
+
 const validation = (data) => {
 
     let errors={
@@ -10,17 +10,17 @@ const validation = (data) => {
     if (!data.userName){
         errors.userName= "이름을 입력해주세요!"   
     }
+    else if (!data.email){
+        errors.email = "이메일을 입력해주세요!"   
+    }
+    else if(!/\S+@\S+\.\S+/.test(data.email)){
+        errors.email = "이메일 형식이 맞지 않습니다!" 
+    }
     else if (!data.userId){
         errors.userId = "아이디를 입력해주세요!"
     }
     else if(data.userId.length <6){
-        errors.userId = "아이디의 길이가 5글자 보다 길어야합니다!"
-    }
-    else if (!data.email){
-        errors.email = "이메일을 입력해주세요!"   
-    } 
-    else if(!/\S+@\S+\.\S+/.test(data.email)){
-        errors.email = "이메일 형식이 맞지 않습니다!" 
+        errors.userId = "아이디 길이가 5글자 보다 길어야합니다!"
     }
     else if (!data.password){
         errors.password = "비밀번호를 입력해주세요!"  
@@ -37,7 +37,7 @@ const validation = (data) => {
     
     else{
 
-        axios.post(url,{
+        axios.post('/api/auth/signup',{
             userName : data.userName,
             email: data.email,
             userId: data.userId,
@@ -51,9 +51,11 @@ const validation = (data) => {
                     icon: 'success',
                     title: '회원 가입 완료.',
                     text: data.userName + '님 저희 사이트에 오신걸 환영해요!', 
-                    confirmButtonText:'<a  href="/signin">로그인</a>',
-                }
-                );
+                    confirmButtonText:'<a>로그인</a>',
+                })
+                .then(function() {
+                    window.location = "/signin";
+                })
                 })
             .catch(error => {
                 console.log(error.response)

@@ -2,8 +2,8 @@ import React from 'react';
 
 function Board() {
     return (
-            <table class="table table-striped">
-                <thead class="thead-dark">
+            <table className="table table-striped">
+                <thead className="thead-dark">
                     <tr>
                         <th scope="col">번호</th>
                         <th scope="col">제목</th>

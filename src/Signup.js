@@ -41,17 +41,16 @@ function Signup() {
       checkPassword: "",
     });
 
-    function handle(e){
-      const newData = { ...data }
-      newData[e.target.name] = e.target.value
-      setData(newData)
-      console.log(newData)
-      }
+  function handle(e){
+    const newData = { ...data }
+    newData[e.target.name] = e.target.value
+    setData(newData)
+    }
       
-      function submit(e){
-        e.preventDefault();
-        setErrors(validation(data))
-      }
+  function submit(e){
+    e.preventDefault();
+    setErrors(validation(data))
+    }
 
 
   return (
@@ -76,9 +75,9 @@ function Signup() {
                 name="userName"
                 id ="userName"
                 autoComplete="name"/>
-                
+                {errors.userName && <p className="text-danger">{errors.userName}</p>}
             </Grid>
-            {errors.userName && <p className="text-danger">{errors.userName}</p>}
+            
 
             <Grid item xs={12}>
               <TextField
@@ -90,9 +89,9 @@ function Signup() {
                 name="email"
                 id = "email"
                 autoComplete="email"/>
-                
+                {errors.email && <p className="text-danger">{errors.email}</p>}
             </Grid>
-            {errors.email && <p className="text-danger">{errors.email}</p>}
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -102,10 +101,10 @@ function Signup() {
                 value={data.userId} onChange={e => handle(e)}
                 name="userId"
                 id = "userId"
-                autoComplete="id"
-              />
+                autoComplete="id"/>
+                {errors.userId && <p className="text-danger">{errors.userId}</p>}
             </Grid>
-            {errors.userId && <p className="text-danger">{errors.userId}</p>}
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -116,10 +115,10 @@ function Signup() {
                 label="비밀번호"
                 value={data.password} onChange={e => handle(e)}
                 type="password"
-                autoComplete="current-password"
-              />
+                autoComplete="current-password"/>
+                {errors.password && <p className="text-danger">{errors.password}</p>}
             </Grid>
-            {errors.password && <p className="text-danger">{errors.password}</p>}
+            
 
             <Grid item xs={12}>
               <TextField
@@ -130,13 +129,10 @@ function Signup() {
                 id="checkPassword"
                 label="비밀번호 확인"
                 value={data.checkPassword} onChange={e => handle(e)}
-                type="password"
-                
-              />
+                type="password"/>
+                {errors.checkPassword && <p className="text-danger">{errors.checkPassword}</p>}
             </Grid>
-            {errors.checkPassword && <p className="text-danger">{errors.checkPassword}</p>}
-            
-            
+
           </Grid>
           <Button
             type="submit"
@@ -144,8 +140,7 @@ function Signup() {
             fullWidth
             variant="contained"
             style={{ color: 'black' }}
-            className={classes.submit}
-          >
+            className={classes.submit}>
             회원가입
           </Button>
           

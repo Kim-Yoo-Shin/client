@@ -41,18 +41,13 @@ function Signin() {
     const newData = { ...data }
     newData[e.target.name] = e.target.value
     setData(newData)
-    console.log(newData)
     }
-
 
   function submit(e){
     e.preventDefault();
     setErrors(validation(data))
-    
-
     }
     
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -105,7 +100,7 @@ function Signin() {
           
             
             <Grid item>
-              <Link href="/member" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"계정이 없나요? 회원가입"}
               </Link>
             </Grid>
