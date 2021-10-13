@@ -8,7 +8,8 @@ import axios from 'axios';
 
 
 axios.defaults.baseURL = 'http://localhost:8080/api';
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('accessToken');
+let token = localStorage.getItem('accessToken') || '';
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 ReactDOM.render(
   <React.StrictMode>
     <App />
