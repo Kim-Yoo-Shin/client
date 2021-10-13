@@ -37,13 +37,12 @@ const validation = (data) => {
     
     else{
 
-        axios.post('/api/auth/signup',{
+        axios.post('api/auth/signup',{
             userName : data.userName,
             email: data.email,
             userId: data.userId,
             password: data.password,
             checkPassword: data.checkPassword,
-            
             })  
             .then(res=>{
                 console.log(res.data)

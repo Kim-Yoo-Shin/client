@@ -7,7 +7,7 @@ import Signup from './Signup.js'
 import Board from './Board.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
+import Mypage from './components/Mypage.js'
 
 export default class App extends Component{
 
@@ -37,6 +37,7 @@ export default class App extends Component{
               <Route path ="/mypage">
                 <Header/>
                 <Navbar/>
+                <Mypage/>
               </Route>
             </Switch>
         </div>

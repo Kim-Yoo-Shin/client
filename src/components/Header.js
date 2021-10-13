@@ -5,24 +5,14 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import { Link } from 'react-router-dom';
-import swal from 'sweetalert2';
+import Logout from '../utils/AfterLogout.js'
 
 
-
-function Logout(e){ 
-    localStorage.clear();
-    swal.fire({
-        icon: 'success',
-        title: '로그아웃',
-        text: '로그아웃 완료!', 
-        confirmButtonText:'<a>확인</a>',
-    }
-    );
-}
 
 export default class Header extends Component {
 
     render(){
+        
         var isUser = localStorage.getItem('accessToken')
         let buttons;
 
@@ -40,9 +30,9 @@ export default class Header extends Component {
         else{
             buttons = (
                 <div className="header_option">
-                <VpnKeyIcon className="header_login"/>
-                <Link to ="/signin"  className="homelogin">
-                <span onClick={e => Logout(e)} className = "header_optionLine"> 로그아웃 </span>
+                    <VpnKeyIcon className="header_login"/>
+                    <Link to ="/signin"  className="homelogin">
+                    <span onClick={e => Logout(e)} className = "header_optionLine"> 로그아웃 </span>
                 </Link>
                 
             </div>
