@@ -7,8 +7,8 @@ import 'semantic-ui-css/semantic.min.css'
 import axios from 'axios';
 
 
-axios.defaults.baseURL = 'http://localhost:8080';
-axios.defaults.headers.common['Authorization'] = 'Bearer' + localStorage.getItem('accessToken');
+axios.defaults.baseURL = 'http://localhost:8080/api';
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('accessToken');
 ReactDOM.render(
   <React.StrictMode>
     <App />
